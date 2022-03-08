@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added bootstrap link to be able to use bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
     <title>Weather Dashboard</title>
 </head>
+
 <body>
-    <h1>Whats the weather?</h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">What's the weather like?</h1>
+            <p class="lead">This is your weather dashboard. Search for a city to find the 5-day forecast.</p>
+        </div>
+    </div>
+    <!-- added a form here for a search city, state so the user may type in what they're looking for -->
+    <form>
+        <h2>Search</h2>
+       
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input  id="search-input"type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Search for a city & a state here!">
+          </div>
+            </div>
+            <div id="button">
+            <button  class="btn btn-primary" type="submit">Search</button>
+            </div>
+
+        </div>
+        <div id="card"></div>
+    </form>
+
+    <div id="search-results" class="list-group"></div>
+
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
+
 </html>
