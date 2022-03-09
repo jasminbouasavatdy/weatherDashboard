@@ -80,7 +80,7 @@ console.log(data);
       var cardEl = document.createElement('div');
 
           var h3El = document.createElement('h3');
-          h3El.textContent = data.name;
+          h3El.textContent = data.name + moment.unix(data.dt).format(" MM/DD/YYYY");
           cardEl.appendChild(h3El);
     
           var tempEl = document.createElement('p');
