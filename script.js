@@ -27,21 +27,6 @@ var handleSearchSubmit = function (event) {
 };
 
 
-// var getFeaturedRepos = function (language) {
-//   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
-
-//   fetch(apiUrl).then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {
-//         displayRepos(data.items, language);
-//       });
-//     } else {
-//       alert('Error: ' + response.statusText);
-//     }
-//   });
-// };
-// var requestURl ='https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=19deadf5a571709d548a2d61112c074d&units=imperial';
-
 var geoByName = function (citysearch) {
   var citySearchURL = geoURL + citysearch + '&appid=' + api;
   console.log(citySearchURL);
@@ -50,7 +35,6 @@ var geoByName = function (citysearch) {
       if (response.ok) {
         response.json()
           .then(function (data) {
-            // change this later!!
             display(data,citysearch);
           });
       } else {
@@ -100,44 +84,9 @@ console.log(data);
     
           weatherInfo.appendChild(cardEl);
         });
-        // .catch((err) =>console.log(err));
  
       }
   
-
-
-  // fetch(requestURl)
-  //   .then(function (response) {
-  //     return response.json();
-  //   })
-  //   .then(function (data) {
-  //     console.log(data);
-
-  //     var cardEl = document.createElement('div');
-
-  //     var h3El = document.createElement('h3');
-  //     h3El.textContent = data.name;
-  //     cardEl.appendChild(h3El);
-
-  //     var tempEl = document.createElement('p');
-  //     tempEl.textContent = 'Temp: ' + data.main.temp +' F';
-  //     cardEl.appendChild(tempEl);
-
-  //     var humidityEl = document.createElement('p')
-  //     humidityEl.textContent = 'Humidity: ' + data.main.humidity + ' %';
-  //     cardEl.appendChild(humidityEl);
-
-
-  //     var windSpeedEl =document.createElement('p')
-  //     windSpeedEl.textContent= 'Wind Speed: ' + data.wind.speed + ' mph';
-  //     cardEl.appendChild(windSpeedEl);
-
-
-
-  //     weatherInfo.appendChild(cardEl);
-  //     // }
-  //   })
-  //   .catch((err) =>console.log(err));
 
 
 
