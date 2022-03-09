@@ -100,7 +100,7 @@ var fiveForecast = function (lat, lon) {
         response.json()
           .then(function (data) {
             console.log(data);
-            for(var i = 0; i < 40;  i+=7){
+            for(var i = 0; i < 40;  i+=8){
               var card = document.createElement('div');
               var h3 = document.createElement('h3');
               var temp = document.createElement('p');
@@ -109,6 +109,7 @@ var fiveForecast = function (lat, lon) {
   
   
               h3.textContent = data.city.name + moment.unix(data.list[i].dt).format(" MM/DD/YYYY");
+              console.log(i);
               temp.textContent = 'Temp: ' + data.list[i].main.temp + ' F';
               humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + ' %';
               windSpeed.textContent = 'Wind Speed: ' + data.list[i].wind.speed + ' mph';
