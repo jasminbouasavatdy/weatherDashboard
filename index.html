@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- added bootstrap link to be able to use bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-
+    <link rel="stylesheet" src="./style.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -18,22 +18,21 @@
             <p class="lead">This is your weather dashboard. Search for a city to find the 5-day forecast.</p>
         </div>
     </div>
-    <!-- added a form here for a search city, state so the user may type in what they're looking for -->
     <form>
         <h2>Search</h2>
-       
+
         <div class="input-group mb-3">
             <div class="input-group-prepend">
             </div>
-            <input  id="search-input"type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Search for a city & a state here!">
-          </div>
-            </div>
-            <div id="button">
-            <button  class="btn btn-primary" type="submit">Search</button>
-            </div>
-
+            <input id="search-input" name="search-input" type="text" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                placeholder="Search for a city & a state here!">
         </div>
-        <div id="card"></div>
+        <div>
+            <button id="button" class="btn btn-primary" type="submit">Search</button>
+        </div>
+
+        <div id="card" ></div>
     </form>
 
     <div id="search-results" class="list-group"></div>
