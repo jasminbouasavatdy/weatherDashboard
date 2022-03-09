@@ -1,7 +1,8 @@
 console.log('file loaded')
-var formEL = document.querySelector('#city-search');
+// var formEL = document.querySelector('#city-search');
 var searchBtn = document.getElementById('button');
 var weatherInfo = document.querySelector('#card');
+var forecast = document.querySelector('#section')
 var inputEL = document.querySelector('#search-input');
 var api = '19deadf5a571709d548a2d61112c074d';
 
@@ -31,7 +32,7 @@ var geoByName = function (citysearch) {
       if (response.ok) {
         response.json()
           .then(function (data) {
-            display(data, citysearch);
+            display(data);
           });
       } else {
         alert('Error: ' + response.statusText);
@@ -40,7 +41,7 @@ var geoByName = function (citysearch) {
 };
 
 
-var display = function (weatherData, citysearched) {
+var display = function (weatherData) {
   if (weatherData.length === 0) {
     console.log("no data");
     return;
@@ -82,7 +83,7 @@ var display = function (weatherData, citysearched) {
 
       
 
-
+      weatherInfo.appendChild(cardEl);
 
     });
 
@@ -99,28 +100,29 @@ var fiveForecast = function (lat, lon) {
         response.json()
           .then(function (data) {
             console.log(data);
-            // for(var i = 0; i < 40;  i+7){
-            //   console.log(data.list[i]);
-            // };
-            var sectionEl = document.createElement('section');
+            for(var i = 0; i < 40;  i+=7){
+              var card = document.createElement('div');
+              var h3 = document.createElement('h3');
+              var temp = document.createElement('p');
+              var humidity = document.createElement('p');
+              var windSpeed = document.createElement('p');
+  
+  
+              h3.textContent = data.city.name + moment.unix(data.list[i].dt).format(" MM/DD/YYYY");
+              temp.textContent = 'Temp: ' + data.list[i].main.temp + ' F';
+              humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + ' %';
+              windSpeed.textContent = 'Wind Speed: ' + data.list[i].wind.speed + ' mph';
+  
+  
+  
+              card.appendChild(h3);
+              card.appendChild(temp);
+              card.appendChild(humidity);
+              card.appendChild(windSpeed);
 
-            // var h3 = document.createElement('h3');
-            // var temp = document.createElement('p');
-            // var humidity = document.createElement('p');
-            // var windSpeed = document.createElement('p');
+              forecast.appendChild(card);
+            };
 
-
-            // h3.textContent = data.name + moment.unix(data.dt).format(" MM/DD/YYYY");
-            // temp.textContent = 'Temp: ' + data.main.temp + ' F';
-            // humidity.textContent = 'Humidity: ' + data.main.humidity + ' %';
-            // windSpeed.textContent = 'Wind Speed: ' + data.wind.speed + ' mph';
-
-
-
-            // sectionEl.appendChild(h3);
-            // sectionEl.appendChild(temp);
-            // sectionEl.appendChild(humidity);
-            // sectionEl.appendChild(windSpeed);
 
 
           })
