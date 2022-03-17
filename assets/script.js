@@ -6,7 +6,7 @@ var inputEL = document.querySelector('#search-input');
 var api = '19deadf5a571709d548a2d61112c074d';
 
 // three api links that I used to get the city, lat+lon and the 5 day forecast
-var geoURL = 'http://api.openweathermap.org/geo/1.0/direct?q=';
+var geoURL = 'https://api.openweathermap.org/geo/1.0/direct?q=';
 var latLongURL = 'https://api.openweathermap.org/data/2.5/weather?lat=';
 var fiveDayURL = 'https://api.openweathermap.org/data/2.5/forecast?lat='
 // this was made so when I did a search in the search bar the page would not refresh everytime. I also console logged the data to make sure my button was clicked and working.
